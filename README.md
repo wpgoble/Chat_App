@@ -7,12 +7,14 @@ would allow multiple clients to communicate with each other. This project makes 
 programming and threading techniques.
 ---
 To build the project:
+
 	Run the command 'make' and the project should compile and produce the 
 	executables chat_client.x and chat_server.x. To run  the files, user 
 	the command 'file_name config_file', where file_name is either chat_client.x 
 	or chat_server.x, and config_file is the corresponding configuration file.
 ---
 Server Design:
+
 	For my server design I used a threaded server, and I used the select function 
 	to manage the connected sockets. After accepting a socket, the client would 
 	be placed into a set of sock file descriptors. Also, each new user was placed 
@@ -24,6 +26,7 @@ Server Design:
 	logging out, instead I just remove the proper socket from the userVector.
 
 Client Design:
+
 	For my client design, I used a single thread that constantly listens to the 
 	server, and whenever it can read from the server, it will print to the screen. 
 	When the user wants to log out, it sends a simple message to the server in order 
@@ -31,6 +34,7 @@ Client Design:
 	client know that they can disconnect from the server.
 
 References:
+
 	For references I used class notes/examples, as well as some tutorial videos I found on
 	youtube from a channel called Jacob Sorber. Sorber had two videos that helped 
 	me better understand select and pthreads.
